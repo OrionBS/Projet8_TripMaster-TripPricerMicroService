@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TripPricerServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TripPricerMicroService</a> &gt; <a href="index.source.html" class="el_package">com.tourguide.TripPricerMicroService.service.impl</a> &gt; <span class="el_source">TripPricerServiceImpl.java</span></div><h1>TripPricerServiceImpl.java</h1><pre class="source lang-java linenums">package com.tourguide.TripPricerMicroService.service.impl;
+
+import com.tourguide.TripPricerMicroService.service.TripPricerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+import tripPricer.Provider;
+import tripPricer.TripPricer;
+
+import java.util.List;
+import java.util.UUID;
+
+@Service
+public class TripPricerServiceImpl implements TripPricerService {
+<span class="fc" id="L15">    private Logger logger = LoggerFactory.getLogger(TripPricerServiceImpl.class);</span>
+    private final TripPricer tripPricer;
+
+<span class="fc" id="L18">    public TripPricerServiceImpl(TripPricer tripPricer) {</span>
+<span class="fc" id="L19">        this.tripPricer = tripPricer;</span>
+<span class="fc" id="L20">    }</span>
+
+    @Override
+    public List&lt;Provider&gt; getPrice(String apiKey, UUID attractionId, int adults, int children, int nightsStay, int rewardsPoints) {
+<span class="fc" id="L24">        List&lt;Provider&gt; answer = tripPricer.getPrice(apiKey,attractionId,adults,children,nightsStay,rewardsPoints);</span>
+<span class="fc" id="L25">        logger.info(&quot;Call&quot;);</span>
+<span class="fc" id="L26">        logger.info(&quot;Answer &quot;+answer);</span>
+<span class="fc" id="L27">        return answer;</span>
+    }
+
+    @Override
+    public String getProviderName(String apiKey, int adults) {
+<span class="fc" id="L32">        logger.info(&quot;Call&quot;);</span>
+<span class="fc" id="L33">        return tripPricer.getProviderName(apiKey,adults);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

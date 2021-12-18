@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tourguide.TripPricerMicroService.TripPricerServiceUnitTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-12-13T16:05:26" hostname="OBS-Desktop" time="0.461">
+  <properties/>
+  <testcase name="testGetPrice()" classname="com.tourguide.TripPricerMicroService.TripPricerServiceUnitTest" time="0.459"/>
+  <testcase name="testGetProviderName()" classname="com.tourguide.TripPricerMicroService.TripPricerServiceUnitTest" time="0.001"/>
+  <system-out><![CDATA[17:05:27.188 [Test worker] INFO com.tourguide.TripPricerMicroService.service.impl.TripPricerServiceImpl - Call
+17:05:27.195 [Test worker] INFO com.tourguide.TripPricerMicroService.service.impl.TripPricerServiceImpl - Answer [tripPricer.Provider@186d6033]
+17:05:27.213 [Test worker] INFO com.tourguide.TripPricerMicroService.service.impl.TripPricerServiceImpl - Call
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
